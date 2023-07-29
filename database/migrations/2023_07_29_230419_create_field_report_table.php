@@ -16,6 +16,7 @@ return new class extends Migration
 
             $table->foreignIdFor(\App\Models\Field::class);
             $table->foreignIdFor(\App\Models\Report::class);
+            $table->string('value');
 
             $table->timestamps();
         });
