@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reports', function (Blueprint $table) {
+        Schema::create('field_report', function (Blueprint $table) {
             $table->id();
-            $table->foreign('province_id')->references('id')->on('provinces');
-            $table->text('description')->nullable();
+
+            $table->foreign('field_id')->references('id')->on('fields');
+            $table->foreign('report_id')->references('id')->on('reports');
+
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reports');
+        Schema::dropIfExists('field_report');
     }
 };
