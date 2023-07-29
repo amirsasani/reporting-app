@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->foreign('province_id')->references('id')->on('provinces');
+            $table->foreignIdFor(\App\Models\Province::class);
             $table->text('description')->nullable();
             $table->timestamps();
         });

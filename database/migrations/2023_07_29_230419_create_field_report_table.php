@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('field_report', function (Blueprint $table) {
             $table->id();
 
-            $table->foreign('field_id')->references('id')->on('fields');
-            $table->foreign('report_id')->references('id')->on('reports');
+            $table->foreignIdFor(\App\Models\Field::class);
+            $table->foreignIdFor(\App\Models\Report::class);
 
             $table->timestamps();
         });

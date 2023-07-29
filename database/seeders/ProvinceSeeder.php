@@ -13,10 +13,10 @@ class ProvinceSeeder extends Seeder
      */
     public function run(): void
     {
-        Province::createMany([
-            ['title' => 'فارس', 'slug' => 'fars'],
-            ['title' => 'تهران', 'slug' => 'tehran'],
-            ['title' => 'اصفهان', 'slug' => 'isfahan'],
-        ]);
+        Province::create(['title' => 'فارس', 'slug' => 'fars']);
+
+        Province::create(['title' => 'تهران', 'slug' => 'tehran']);
+
+        Province::create(['title' => 'اصفهان', 'slug' => 'isfahan']);
     }
 }
